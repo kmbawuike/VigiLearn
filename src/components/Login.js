@@ -79,12 +79,12 @@ const Login = () => {
 
 	return (
 		<Fragment>
-			<GoogleLogin
+			{/* <GoogleLogin
 				clientId="8087564068-ms4g43sj52oqjeqdvvm68ev2oev7fpoo.apps.googleusercontent.com"
 				buttonText="Login"
 				onSuccess={response}
 				onFailure={response}
-			/>
+			/> */}
 			<div className="icon1">
 				<span className="fa fa-envelope" />
 				<input
