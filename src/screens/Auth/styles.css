@@ -1,0 +1,326 @@
+
+
+
+
+/*-- slide --*/
+
+@keyframes slideleft {
+    from {
+      background-position: 0%;
+    }
+    to {
+      background-position: 90000%;
+    }
+  }
+  
+  @-webkit-keyframes slideleft {
+    from {
+      background-position: 0%;
+    }
+    to {
+      background-position: 90000%;
+    }
+  }
+  
+  .w3layouts-main {
+    background-image: url("../../assets//images/bg.jpg");
+    background-repeat: repeat-x;
+    animation: slideleft 50000s infinite linear;
+    -webkit-animation: slideleft 50000s infinite linear;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  .bg-layer {
+    background: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+  }
+  /*-- //slide --*/
+  
+  /*--header start here--*/
+  .w3ls-header {
+    padding: 0em 0 0;
+  }
+  .icon1 {
+    border-radius: 10px;
+    margin: 0 0 1em;
+    padding: 0.8em 1em;
+    background: rgba(255, 255, 255, 0.94);
+    transition: background 4s;
+  
+  }
+  
+  .icon1:hover{
+    background: #C4C4C4;
+  
+  }
+  
+  .icon1 span.fa {
+    color: #222;
+    width: 22px;
+  }
+  .main-icon {
+    text-align: center;
+  }
+  .main-icon span.fa {
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 1em;
+  }
+  .wthree li {
+    display: inline-block;
+  }
+  a {
+    color: #585858;
+    margin: 0em;
+  }
+  .bottom {
+    margin: 1em 0 0;
+  }
+  
+  
+  
+  .header-main {
+    max-width: 510px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 999;
+    padding: 1.5em 2em;
+    background: rgba(255, 255, 255, 0.04);
+    -webkit-box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  .sign-up {
+    margin: 2em 0;
+  }
+  .header-left {
+    background: #fff;
+    padding: 0px;
+  }
+  .sign-up h2 {
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    background: #fbbc05;
+    width: 40px;
+    height: 40px;
+    line-height: 1.9em;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  ::-webkit-input-placeholder {
+    color: #333 !important;
+  }
+  .header-left-bottom input[type="email"] {
+    outline: none;
+    font-size: 15px;
+    color: #222;
+    border: none;
+    width: 90%;
+    display: inline-block;
+    background: transparent;
+    letter-spacing: 1px;
+  }
+  .top-name{
+    animation-name: top-name;
+    animation-duration: 5s;
+  }
+  @keyframes top-name{
+    from{transform:translateY(-600px)}
+    to{transform:translateY(0)}
+  }
+  
+  .header-left-bottom input[type="text"] {
+    outline: none;
+    font-size: 15px;
+    color: #222;
+    border: none;
+    width: 90%;
+    display: inline-block;
+    background: transparent;
+    letter-spacing: 1px;
+  }
+  
+  .header-left-bottom select {
+    outline: none;
+    font-size: 15px;
+    color: #222;
+    border: none;
+    width: 100%;
+    display: inline-block;
+    background: transparent;
+    letter-spacing: 1px;
+  }
+  .header-left-bottom input[type="password"] {
+    outline: none;
+    font-size: 15px;
+    color: #222;
+    border: none;
+    width: 90%;
+    display: inline-block;
+    background: transparent;
+    letter-spacing: 1px;
+  }
+  .header-left-bottom button.btn {
+    border-radius: 10px;
+    background: #007cc0;
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 0.8em 2em;
+    letter-spacing: 1px;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    width: 100%;
+  }
+  
+  button{
+  transition: background 2s, color 1s !important;
+  }
+  
+  button:hover{
+    background: #fff !important;
+    color: blue !important;
+    font-size: 2rem;
+  }
+  /*-- agileits --*/
+  .header-left-bottom p {
+    font-size: 17px;
+    color: #000;
+    display: inline-block;
+    /* width: 50%; */
+    margin: 20px 0 0;
+    letter-spacing: 1px;
+  }
+  
+  .header-left-bottom p.right {
+    text-align: right;
+  }
+  .header-left-bottom p a {
+    font-size: 11px;
+    color: #e2e2e2;
+    text-transform: uppercase;
+  }
+  .social {
+    margin: 2em 0 0;
+  }
+  .heading h5 {
+    color: #c5c5c5;
+    color: #000000;
+    margin-top: 8px;
+    font-size: 20px;
+  }
+  .social span.fa {
+    color: #fff;
+    font-size: 12px;
+    line-height: 35px;
+    margin: 0 5px;
+    transition: 0.5s all;
+  }
+  .social ul li {
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 15px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+  }
+  .social a.facebook {
+    background: #3b5998;
+  }
+  .social a.twitter {
+    background: #1da1f2;
+  }
+  .social a.linkedin {
+    background: #00a0dc;
+  }
+  .social a.google {
+    background: #dd4b39;
+  }
+  .social ul li a {
+    background: rgba(255, 255, 255, 0.22);
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    display: block;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+  
+  .login-check {
+    position: relative;
+  }
+  
+  
+  /*-- w3layouts --*/
+  
+  /*-- copyright --*/
+  .copyright {
+    padding: 2em 0;
+    text-align: center;
+  }
+  .copyright p {
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #ccc;
+    line-height: 1.8em;
+  }
+  .copyright p a {
+    color: #fff;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    transition: 0.5s all;
+  }
+  /*-- //copyright --*/
+  /*-- //main --*/
+  
+  /*-- responsive-design --*/
+  
+  
+  
+  @media (max-width: 415px) {
+    .social {
+      margin: 1em 0 0;
+    }
+    .copyright {
+      padding: 2em 1em;
+    }
+  }
+  @media (max-width: 384px) {
+    .main-icon span.fa {
+      margin-bottom: 0.6em;
+    }
+    .header-main {
+      max-width: 310px;
+      margin: 0 1em;
+    }
+    .header-left-bottom input[type="email"],
+    .header-left-bottom input[type="password"],
+    .header-left-bottom input[type="text"] {
+      width: 88%;
+      font-size: 12px;
+    }
+    .social ul li {
+      margin: 0 2px;
+    }
+  }
+  /*-- //responsive-design --*/
+  
