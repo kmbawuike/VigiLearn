@@ -1,8 +1,12 @@
 import React, { Fragment, useState } from 'react';
 import './styles.css'
 import Logo from '../../assets/images/logo.png'
+import {GoogleLogin} from 'react-google-login'
 
 const Dashboard = () => {
+    const response = ()=>{
+        console.log('ddd')
+    }
 	return (
 		<Fragment>
 			<aside class="side-nav" id="show-side-navigation1">
@@ -305,6 +309,13 @@ const Dashboard = () => {
 							</div>
 						</div>
 					</div>
+                    <GoogleLogin
+    clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+    buttonText="Login"
+    onSuccess={response}
+    onFailure={response}
+    cookiePolicy={'single_host_origin'}
+  />,
 				</section>
 			</section>
 		</Fragment>
