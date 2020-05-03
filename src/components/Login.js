@@ -1,14 +1,12 @@
 import React, { Component, Fragment, useState, useEffect } from 'react';
-import {useHistory} from 'react-router-dom'
-// import HTTPClient from '../HTTPClients';
-// import { baseUrl } from '../constants/url';
+import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert2';
-import Request from '../util/httpRequest'
+import Request from '../util/httpRequest';
 import { trackPromise } from 'react-promise-tracker';
-// const httpClient = new HTTPClient();
+import { GoogleLogin } from 'react-google-login';
 const request = new Request();
 const Login = () => {
-	let history = useHistory()
+	let history = useHistory();
 	const [ details, setDetails ] = useState({
 		email: '',
 		password: ''
@@ -29,13 +27,13 @@ const Login = () => {
 		return re.test(String(email).toLowerCase());
 	};
 
-	const usersValidate = (usersArray, email, password)=>{
-		if(usersArray.some(item => item.email === email && item.password === password)){
-			return true
-		}else{
-			return false
+	const usersValidate = (usersArray, email, password) => {
+		if (usersArray.some((item) => item.email === email && item.password === password)) {
+			return true;
+		} else {
+			return false;
 		}
-	}
+	};
 
 	const validate = () => {
 		const { email, password } = details;
@@ -43,9 +41,8 @@ const Login = () => {
 			return 'All Inputs are required';
 		} else if (emailValidate(email) === false) {
 			return 'Input a valid email';
-		}
-		else if(usersValidate(users, email, password) === false){
-			return "Unauthenticated User"
+		} else if (usersValidate(users, email, password) === false) {
+			return 'Unauthenticated User';
 		}
 	};
 
@@ -61,25 +58,24 @@ const Login = () => {
 			});
 		} else {
 			console.log('loggged in');
-			history.push('/')
+			history.push('/');
 		}
 	};
 
 	const getUsers = async () => {
-		const users = await request.get('https://vigilearn-server.herokuapp.com/users')
-		setUsers(users)
+		const users = await request.get('https://vigilearn-server.herokuapp.com/users');
+		setUsers(users);
 
-		console.log(users)
+		console.log(users);
+	};
+
+	useEffect(() => {
+		trackPromise(getUsers());
+	}, []);
+
+	const response = ()=>{
+		console.log('hhey')
 	}
-
-
-	useEffect(()=>{
-		trackPromise(
-			getUsers()
-		)
-		
-		
-	},[])
 
 	return (
 		<Fragment>
@@ -106,9 +102,23 @@ const Login = () => {
 				/>
 			</div>
 			<div className="bottom">
-				<button className="btn" onClick={handleLogin}>
+				<GoogleLogin
+					clientId="1075538025016-7ksrd2999e7c8djbf2t1ndk6f4a2ngod.apps.googleusercontent.com"
+					render={(renderProps) => (
+						<button onClick={renderProps.onClick} className="btn">
+							Login
+						</button>
+					)}
+					buttonText="Login"
+					onSuccess={response}
+					onFailure={response}
+					
+				/>
+
+				{/* <button className="btn" onClick={handleLogin}>
 					Log In
-				</button>
+				</button> */}
+				
 			</div>
 		</Fragment>
 	);
