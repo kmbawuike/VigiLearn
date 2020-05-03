@@ -31,9 +31,9 @@ const AuthScreen = () => {
 								{formDisplay}
 								<div className="links">
 									<p className="right" onClick={toggleLogin}>
-										<a href="#" target="_parent">
+										<span target="_parent">
 											{member}
-										</a>
+										</span>
 									</p>
 									<div className="clear" />
 								</div>
@@ -47,15 +47,14 @@ const AuthScreen = () => {
 									{/* <a href="#" className="google">
 											<span className="fa fa-google-plus" />
 										</a> */}
-								
-									<GoogleLogin
-										clientId="1075538025016-7ksrd2999e7c8djbf2t1ndk6f4a2ngod.apps.googleusercontent.com"
 
+									<GoogleLogin
+										clientId="8087564068-ms4g43sj52oqjeqdvvm68ev2oev7fpoo.apps.googleusercontent.com"
 										buttonText="Login"
 										onSuccess={response}
 										onFailure={response}
+										
 									/>
-								
 								</li>
 							</ul>
 						</div>

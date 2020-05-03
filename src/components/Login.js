@@ -1,12 +1,12 @@
 import React, { Component, Fragment, useState, useEffect } from 'react';
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert2';
-import Request from '../util/httpRequest'
+import Request from '../util/httpRequest';
 import { trackPromise } from 'react-promise-tracker';
-import {GoogleLogin} from 'react-google-login'
+import { GoogleLogin } from 'react-google-login';
 const request = new Request();
 const Login = () => {
-	let history = useHistory()
+	let history = useHistory();
 	const [ details, setDetails ] = useState({
 		email: '',
 		password: ''
@@ -27,13 +27,13 @@ const Login = () => {
 		return re.test(String(email).toLowerCase());
 	};
 
-	const usersValidate = (usersArray, email, password)=>{
-		if(usersArray.some(item => item.email === email && item.password === password)){
-			return true
-		}else{
-			return false
+	const usersValidate = (usersArray, email, password) => {
+		if (usersArray.some((item) => item.email === email && item.password === password)) {
+			return true;
+		} else {
+			return false;
 		}
-	}
+	};
 
 	const validate = () => {
 		const { email, password } = details;
@@ -41,9 +41,8 @@ const Login = () => {
 			return 'All Inputs are required';
 		} else if (emailValidate(email) === false) {
 			return 'Input a valid email';
-		}
-		else if(usersValidate(users, email, password) === false){
-			return "Unauthenticated User"
+		} else if (usersValidate(users, email, password) === false) {
+			return 'Unauthenticated User';
 		}
 	};
 
@@ -59,28 +58,33 @@ const Login = () => {
 			});
 		} else {
 			console.log('loggged in');
-			history.push('/')
+			history.push('/');
 		}
 	};
 
 	const getUsers = async () => {
-		const users = await request.get('https://vigilearn-server.herokuapp.com/users')
-		setUsers(users)
+		const users = await request.get('https://vigilearn-server.herokuapp.com/users');
+		setUsers(users);
 
-		console.log(users)
+		console.log(users);
+	};
+
+	useEffect(() => {
+		getUsers();
+	}, []);
+
+	const response =()=>{
+		console.log('fgg')
 	}
-
-
-	useEffect(()=>{
-		
-			getUsers()
-		
-		
-		
-	},[])
 
 	return (
 		<Fragment>
+			<GoogleLogin
+				clientId="8087564068-ms4g43sj52oqjeqdvvm68ev2oev7fpoo.apps.googleusercontent.com"
+				buttonText="Login"
+				onSuccess={response}
+				onFailure={response}
+			/>
 			<div className="icon1">
 				<span className="fa fa-envelope" />
 				<input
@@ -104,7 +108,6 @@ const Login = () => {
 				/>
 			</div>
 			<div className="bottom">
-			
 				<button className="btn" onClick={handleLogin}>
 					Log In
 				</button>
