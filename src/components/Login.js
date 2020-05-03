@@ -58,7 +58,7 @@ const Login = () => {
 			});
 		} else {
 			console.log('loggged in');
-			history.push('/');
+			history.push('/dashboard');
 		}
 	};
 

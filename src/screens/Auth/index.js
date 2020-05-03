@@ -1,17 +1,22 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, useState } from 'react';
 import './styles.css';
 import LoginForm from '../../components/Login';
 import SignupForm from '../../components/SignUp';
 import { GoogleLogin } from 'react-google-login';
-import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const AuthScreen = () => {
+	const history = useHistory()
 	const [ isLogin, setIsLogin ] = useState(true);
 	const toggleLogin = () => {
 		setIsLogin(!isLogin);
 	};
 	const successResponse = (response) => {
 		console.log('success', response);
+		console.log(Array.isArray(response))
+		console.log(response.Pt)
+		history.push('/dashboard');
+
 	};
 
 	const failureResponse = (response) =>{
@@ -34,13 +39,13 @@ const AuthScreen = () => {
 							<form>
 								{formDisplay}
 								<div className="links">
-									<p className="right" onClick={toggleLogin}>
-										<span target="_parent">
-											{member}
-										</span>
-									</p>
-									<div className="clear" />
-								</div>
+										<p className="right" onClick={toggleLogin}>
+											<a href="#" target="_parent">
+												{member}
+											</a>
+										</p>
+										<div className="clear" />
+									</div>
 							</form>
 						</div>
 
