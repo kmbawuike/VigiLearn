@@ -10,9 +10,13 @@ const AuthScreen = () => {
 	const toggleLogin = () => {
 		setIsLogin(!isLogin);
 	};
-	const response = () => {
-		console.log('Hello');
+	const successResponse = (response) => {
+		console.log('success', response);
 	};
+
+	const failureResponse = (response) =>{
+		console.log('failure', response)
+	}
 
 	const formDisplay = isLogin ? <LoginForm /> : <SignupForm />;
 	const googleText = isLogin ? 'or Login using :' : 'or Signup using :';
@@ -51,8 +55,8 @@ const AuthScreen = () => {
 									<GoogleLogin
 										clientId="8087564068-ms4g43sj52oqjeqdvvm68ev2oev7fpoo.apps.googleusercontent.com"
 										buttonText="Login"
-										onSuccess={response}
-										onFailure={response}
+										onSuccess={successResponse}
+										onFailure={failureResponse}
 										
 									/>
 								</li>
