@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert2';
 import Request from '../util/httpRequest';
 import { trackPromise } from 'react-promise-tracker';
-import { GoogleLogin } from 'react-google-login';
+
 const request = new Request();
 const Login = () => {
 	let history = useHistory();
@@ -73,10 +73,6 @@ const Login = () => {
 		trackPromise(getUsers());
 	}, []);
 
-	const response = ()=>{
-		console.log('hhey')
-	}
-
 	return (
 		<Fragment>
 			<div className="icon1">
@@ -102,10 +98,10 @@ const Login = () => {
 				/>
 			</div>
 			<div className="bottom">
-				<GoogleLogin
+				{/* <GoogleLogin
 					clientId="1075538025016-7ksrd2999e7c8djbf2t1ndk6f4a2ngod.apps.googleusercontent.com"
 					render={(renderProps) => (
-						<button onClick={renderProps.onClick} className="btn">
+						<button onClick={renderProps.onClick}>
 							Login
 						</button>
 					)}
@@ -113,15 +109,34 @@ const Login = () => {
 					onSuccess={response}
 					onFailure={response}
 					
-				/>
+				/> */}
 
 				{/* <button className="btn" onClick={handleLogin}>
 					Log In
 				</button> */}
+
 				
 			</div>
 		</Fragment>
 	);
 };
 
+// const btn = {
+// 	borderRadius: '10px',
+//     background: '#007cc0',
+//     color: '#fff',
+//     fontSize: '15px',
+//     textTransform: 'uppercase',
+//     padding: '0.8em 2em',
+//     letterSpacing: '1px',
+//     transition: 0.5s all;
+//     -webkit-transition: 0.5s all;
+//     -moz-transition: 0.5s all;
+//     -o-transition: 0.5s all;
+//     display: inline-block;
+//     cursor: pointer;
+//     outline: none;
+//     border: none;
+//     width: 100%;
+// }
 export default Login;
