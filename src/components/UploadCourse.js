@@ -2,8 +2,11 @@ import React, { Fragment, useState, useEffect } from 'react';
 import swal from 'sweetalert2';
 import Request from '../util/httpRequest';
 import {url} from '../util/baseUrl'
+import {useHistory} from 'react-router-dom'
 const request = new Request();
+
 const UploadCourse = () => {
+	const history = useHistory()
 	const [ state, setState ] = useState({
 		user_id: 1,
 		title: '',
@@ -88,6 +91,7 @@ const UploadCourse = () => {
 				video: video,
 				coverPhoto: coverPhoto
 			});
+			history.push('/dahboard')
 		}
 	};
 
@@ -149,13 +153,6 @@ const UploadCourse = () => {
 						/>
 					</div>
 
-					{coverPhoto && <img src={coverPhoto} alt="" />}
-					{video && (
-						<video controls width="250">
-							<source src={video} type="video/mp4" />
-							Sorry, your browser doesn't support embedded videos.
-						</video>
-					)}
 					<div className="form-group">
 						<button className="btn-upload" onClick={handleSubmit}>
 							Create Course

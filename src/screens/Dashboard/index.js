@@ -35,7 +35,7 @@ const Dashboard = () => {
 							{/* <i class="fa fa-envelope-open-o fa-fw" /> */}
 							<i class="fab fa-leanpub" />
 
-							<NavLink to="/all_courses">All Courses</NavLink>
+							<NavLink to="/">All Courses</NavLink>
 						</li>
 
 						<li>
