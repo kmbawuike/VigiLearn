@@ -7,17 +7,17 @@ const Routes = () => {
 	return (
 		<Router>
 			<Switch>
-				<Route exact path="/home">
+				<Route  exact path="/">
 					<HomeScreen />
 				</Route>
 			</Switch>
 			<Switch>
-				<Route exact path="/auth">
+				<Route path="/auth">
 					<AuthScreen />
 				</Route>
 			</Switch>
 			<Switch>
-				<Route exact path="/dashboard">
+				<Route path="/dashboard">
 					<DashBoardScreen />
 				</Route>
 			</Switch>

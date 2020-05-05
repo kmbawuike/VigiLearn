@@ -1,0 +1,12 @@
+import React, {useState, Fragment} from 'react'
+
+const Profile = ()=>{
+    return(
+        <Fragment>
+            
+        </Fragment>
+    )
+    
+}
+
+export default Profile
