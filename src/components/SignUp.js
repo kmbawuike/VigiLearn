@@ -3,11 +3,13 @@ import React, { useState, Fragment } from 'react';
 // import {baseUrl} from '../constants/url'
 import swal from 'sweetalert2';
 import Request from '../util/httpRequest'
-import {trackPromise} from 'react-promise-tracker'
+import {url} from '../util/baseUrl'
+import {useHistory} from 'react-router-dom'
 
 const request = new Request()
 
 const SignUp = ()=>{
+    const history = useHistory()
    const  [state, setState] = useState({
         firstName: '',
 		lastName: '',
@@ -52,13 +54,14 @@ const SignUp = ()=>{
 				footer: err
 			});
 		} else {
-			request.post(`https://vigilearn-server.herokuapp.com/users`, {
+			request.post(`${url}users`, {
 				firstName: state.firstName,
 				lastName: state.lastName,
 				email: state.email,
 				designation: state.designation,
 				password: state.password
-			});
+            });
+            history.push('/dashboard')
 		}
     }
 

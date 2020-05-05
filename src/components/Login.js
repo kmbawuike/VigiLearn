@@ -2,8 +2,7 @@ import React, { Component, Fragment, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert2';
 import Request from '../util/httpRequest';
-import { trackPromise } from 'react-promise-tracker';
-import { GoogleLogin } from 'react-google-login';
+import {url} from '../util/baseUrl'
 const request = new Request();
 const Login = () => {
 	let history = useHistory();
@@ -63,7 +62,7 @@ const Login = () => {
 	};
 
 	const getUsers = async () => {
-		const users = await request.get('https://vigilearn-server.herokuapp.com/users');
+		const users = await request.get(`${url}users`);
 		setUsers(users);
 
 		console.log(users);
